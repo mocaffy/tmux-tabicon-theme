@@ -1,57 +1,59 @@
 # tmux-tabicon-theme
 
-[tmux-tabicon](https://github.com/mocaffy/tmux-tabicon) のテーマコレクションです。プロセス名に応じて自動的にアイコンを表示するための設定が含まれています。
+Theme collection for [tmux-tabicon](https://github.com/mocaffy/tmux-tabicon). These themes provide automatic icon display based on process names.
 
-## 含まれるテーマ
+[日本語](README_ja.md)
 
-- `normal` - 基本的なアイコンセット
-- その他のテーマは `themes` ディレクトリを参照してください
+## Available Themes
 
-## 前提条件
+- `normal` - Basic icon set
+- Check the `themes` directory for additional themes
 
-- [TPM (Tmux Plugin Manager)](https://github.com/tmux-plugins/tpm) がインストールされていること
-- [tmux-tabicon](https://github.com/mocaffy/tmux-tabicon) プラグインがインストールされていること
+## Prerequisites
 
-## インストール方法
+- [TPM (Tmux Plugin Manager)](https://github.com/tmux-plugins/tpm) installed
+- [tmux-tabicon](https://github.com/mocaffy/tmux-tabicon) plugin installed
 
-1. TPMをインストール（まだの場合）:
+## Installation
+
+1. Install TPM (if not already installed):
 ```bash
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
-2. このテーマリポジトリをクローン:
+2. Clone this theme repository:
 ```bash
 git clone https://github.com/mocaffy/tmux-tabicon-theme.git ~/.config/tmux/tabicon-theme/
 ```
 
-3. tmux.confに以下を追加:
+3. Add the following to your tmux.conf:
 ```tmux
-# テーマディレクトリの設定
+# Set theme directory
 set -g @tmux-tabicon-themes-dir ~/.config/tmux/tabicon-theme/
 
-# プラグインの設定
+# Configure plugin
 set -g @plugin 'mocaffy/tmux-tabicon'
 
-# テーマの選択（オプション、デフォルトは'normal'）
+# Select theme (optional, defaults to 'normal')
 set -g @tmux-tabicon-theme 'normal'
 
-# TPMの初期化（これは設定の最後に記述）
+# Initialize TPM (should be at the end of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
 ```
 
-4. 設定を反映:
-   - tmuxを起動中の場合: プレフィックス + I (大文字のI) を押してプラグインをインストール
-   - または、tmuxを再起動
+4. Apply the configuration:
+   - If tmux is running: Press prefix + I (capital I) to install plugins
+   - Or restart tmux
 
-## カスタマイズ
+## Customization
 
-独自のテーマを作成する場合は、`themes` ディレクトリ内の既存のテーマを参考にしてください。
-各テーマは以下の要素を含むことができます：
+To create your own theme, refer to the existing themes in the `themes` directory.
+Each theme can include:
 
-- プロセス名とアイコンのマッピング
-- アイコンの色設定
-- その他の表示形式のカスタマイズ
+- Process name to icon mappings
+- Icon color settings
+- Other display format customizations
 
-## ライセンス
+## License
 
-このプロジェクトは[MITライセンス](LICENSE)の下で公開されています。
+This project is released under the [MIT License](LICENSE).
